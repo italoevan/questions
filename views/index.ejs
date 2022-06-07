@@ -1,8 +1,41 @@
 <%- include ('partials/header.ejs') %>
-<body>
-    <%- include ('partials/navbar.ejs') %>
-    Inicio menor
-</body>
-</html>
 
-<%- include ('partials/footer.ejs') %>
+    <body>
+
+
+        <%- include ('partials/navbar.ejs') %>
+
+            <div class="container">
+                <br>
+                <a href="/perguntar" class="btn btn-primary">Perguntar</a>
+                <br>
+                <br>
+                <% data.forEach( data=> { %>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>
+                                <%= data["titulo"] %>
+                            </p>
+                            <p>
+                                <%= data["descricao"] %>
+                            </p>
+
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary">Responder</button>
+                        </div>
+                    </div>
+                    <br>
+                    <% }) %>
+            </div>
+
+
+
+
+
+
+    </body>
+
+    </html>
+
+    <%- include ('partials/footer.ejs') %>
